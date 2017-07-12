@@ -9,14 +9,20 @@ module.exports = {
     if(cmd.command('drake', event)){
       // https://i.redd.it/cijkbpfu7eyy.jpg
       Jimp.read(event.author.avatarURL, function (err, image) {
-        image.resize(150, 150);
-        Jimp.read('https://i.redd.it/cijkbpfu7eyy.jpg').then(function (lenna) {
-            lenna.resize(600, 600)
-                 .composite(lenna, 0, 0)
-                 .composite(image, 300, 0)
-                 .getBuffer(Jimp.MIME_PNG, (error, buffer) => {
-                   event.channel.sendFile(buffer, 'teste.png')
-                 });
+        image.resize(300, 300);
+        Jimp.read('https://i.redd.it/cijkbpfu7eyy.jpg').then(function (foto) {
+          foto.resize(300, 300);
+          Jimp.read('https://i.redd.it/cijkbpfu7eyy.jpg').then(function (lenna) {
+              lenna.resize(600, 600)
+                   .composite(lenna, 0, 0)
+                   .composite(image, 300, 0)
+                   .composite(foto, 300, 300)
+                   .getBuffer(Jimp.MIME_PNG, (error, buffer) => {
+                     event.channel.sendFile(buffer, 'teste.png')
+                   });
+          }).catch(function (err) {
+              console.error('Jimp error: '+err);
+          });
         }).catch(function (err) {
             console.error('Jimp error: '+err);
         });
