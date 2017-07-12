@@ -1,5 +1,6 @@
 const Request = require("request");
 const Discord = require("discord.js");
+const { createCanvas, loadImage } = require("canvas");
 var vars = require('./Vars.js');
 var command = require('./Commands.js');
 var mask = require('./Jimp/Mask.js');
