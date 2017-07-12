@@ -1,7 +1,7 @@
 {
-  "name": "node-js-getting-started",
+  "name": "Soos bot",
   "version": "0.2.7",
-  "description": "A sample Node.js app using Express 4",
+  "description": "A discord.js bot",
   "engines": {
     "node": "6.11.1"
   },
