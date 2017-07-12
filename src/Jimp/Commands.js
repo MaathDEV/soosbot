@@ -8,11 +8,11 @@ module.exports = {
   drake: function(event, client){
     if(cmd.command('drake', event)){
       // https://i.redd.it/cijkbpfu7eyy.jpg
-      Jimp.read(event.author.avatarURL, function (err, image) {
+      Jimp.read(event.mentions.users.array()[0].avatarURL, function (err, image) {
         image.resize(300, 300);
-        Jimp.read('https://i.redd.it/cijkbpfu7eyy.jpg').then(function (foto) {
+        Jimp.read(event.mentions.users.array()[1].avatarURL).then(function (foto) {
           foto.resize(300, 300);
-          Jimp.read('https://i.redd.it/cijkbpfu7eyy.jpg').then(function (lenna) {
+          Jimp.read('https://i.imgur.com/1Kq6szx.png').then(function (lenna) {
               lenna.resize(600, 600)
                    .composite(lenna, 0, 0)
                    .composite(image, 300, 0)
