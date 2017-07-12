@@ -6,7 +6,7 @@ var mask = require('./Mask.js');
 
 module.exports = {
   drake: function(event, client){
-    if(cmd.command.command('drake', event)){
+    if(cmd.command('drake', event)){
       // https://i.redd.it/cijkbpfu7eyy.jpg
       Jimp.read(event.author.avatarURL, function (err, image) {
         image.resize(150, 150);
