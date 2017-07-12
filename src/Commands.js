@@ -22,6 +22,13 @@ module.exports = {
         return true;
       }
     },
+    testTwoMention: function(event){
+      if(event.mentions.users.array()[1] == undefined){
+        return false;
+      } else {
+        return true;
+      }
+    },
     redditRandomImage: function(link, event, client){
       Request(link, (error, response, body) => {
           if (!error && response.statusCode === 200) {
