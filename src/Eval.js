@@ -2,6 +2,7 @@ const Request = require("request");
 const Discord = require("discord.js");
 var vars = require('./Vars.js');
 var command = require('./Commands.js');
+var mask = require('./Jimp/Mask.js');
 module.exports = {
   evalCommand: function(event, client){
     function clean(text) {
